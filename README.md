@@ -11,11 +11,8 @@ Vue clock!
 
 ## Technolgies
 
-* [Node](https://nodejs.org/en/)
-* [Express](https://expressjs.com/)
-* [Jest](https://jestjs.io/)
-* [Supertest](https://www.npmjs.com/package/supertest)
-
+* [Vue](https://vuejs.org)
+* [Vite](https://vitejs.dev)
 
 ## Features
 

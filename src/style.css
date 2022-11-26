@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Raleway:900&display=swap");
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Assistant', sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
@@ -125,60 +127,131 @@ transform: rotate(180deg);
 
 #textCircle{
 fill: rgb(49, 67, 43);
-opacity: 50%;
+opacity: 88%;
 
 }
 
 
 #circle { position: relative; width: 100% }
 
-#circle text { font-family: 'Helvetica Neue', Arial; font-size: 20px; font-weight: bold;  
+#circle text { font-family: 'Rubik', sans-serif; font-size: 18px; font-weight: bold;  
 }
 
-#circle svg { position: absolute; left: -7rem; top: -83px; width: 141%; height: 675px; 
-  /* transform: scale(-1,1) rotate(210deg); */
-/* transform: rotate(36deg); */
-/* -webkit-animation-name: rotate;
-   -moz-animation-name: rotate;
-    -ms-animation-name: rotate;
-     -o-animation-name: rotate;
-        animation-name: rotate;
--webkit-animation-duration: 60s;
-   -moz-animation-duration: 60s;
-    -ms-animation-duration: 60s;
-     -o-animation-duration: 60s;
-        animation-duration: 60s;
--webkit-animation-iteration-count: infinite;
-   -moz-animation-iteration-count: infinite;
-    -ms-animation-iteration-count: infinite;
-     -o-animation-iteration-count: infinite;
-        animation-iteration-count: infinite;
--webkit-animation-timing-function: linear;
-   -moz-animation-timing-function: linear;
-    -ms-animation-timing-function: linear;
-     -o-animation-timing-function: linear;
-        animation-timing-function: linear; */
-        
+#secondsMinutes{ position: absolute; left: -14rem; top: -217px; width: 189%; height: 940px;
+  /* -webkit-animation-name: rotate;
+  -moz-animation-name: rotate;
+   -ms-animation-name: rotate;
+    -o-animation-name: rotate; */
+       animation-name: rotate;
+/* -webkit-animation-duration: 60s;
+  -moz-animation-duration: 60s;
+   -ms-animation-duration: 60s;
+    -o-animation-duration: 60s; */
+       animation-duration: 60s;
+/* -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+   -ms-animation-iteration-count: infinite;
+    -o-animation-iteration-count: infinite; */
+       animation-iteration-count: infinite;
+/* -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+   -ms-animation-timing-function: linear;
+    -o-animation-timing-function: linear; */
+       animation-timing-function: linear;
 }
 
-@-webkit-keyframes rotate {
-  from { -webkit-transform: rotate(0); }
-  to { -webkit-transform: rotate(360deg); }
+#hoursDisplayed{ position: absolute; left: -7rem; top: -67px; width: 139%; height: 653px; }
+  
+
+
+/* @-webkit-keyframes rotate {
+  from { -webkit-transform: rotate(84deg); }
+  to { -webkit-transform: rotate(444deg); }
 }
 @-moz-keyframes rotate {
-  from { -moz-transform: rotate(0); }
-  to { -moz-transform: rotate(360deg); }
+  from { -moz-transform: rotate(84deg); }
+  to { -moz-transform: rotate(444deg); }
 }
 @-ms-keyframes rotate {
-  from { -ms-transform: rotate(0); }
-  to { -ms-transform: rotate(360deg); }
+  from { -ms-transform: rotate(84deg); }
+  to { -ms-transform: rotate(444deg); }
 }
 @-o-keyframes rotate {
-  from { -o-transform: rotate(0); }
-  to { -o-transform: rotate(360deg); }
+  from { -o-transform: rotate(84deg); }
+  to { -o-transform: rotate(444deg); }
 }
-@keyframes rotate {
-  from { transform: rotate(0); }
-  to { transform: rotate(360deg); }
+*/
+
+/* @keyframes rotate {
+  from { transform: rotate(84deg); }
+  to { transform: rotate(444deg); }
+}  */
+
+@keyframes Snurra1 {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -403px;
+  }
 }
 
+.stopp1 {
+  stop-color: #51c393;
+}
+.stopp2 {
+  stop-color: #ff8000;
+}
+.halvan {
+  animation: Snurra1 10s infinite linear;
+  stroke-dasharray: 180 800;
+  fill: none;
+  stroke: url(#gradient);
+  stroke-width: 23;
+  stroke-linecap: round;
+}
+.snurra {
+  filter: url(#gegga);
+  width: 148%;
+  height: 148%;
+  opacity: 74%;
+  position: absolute;
+  top: -19%;
+  left: -24%;
+}
+.strecken {
+  animation: Snurra1 3s infinite linear;
+  stroke-dasharray: 26 54;
+  fill: none;
+  stroke: url(#gradient);
+  stroke-width: 23;
+  stroke-linecap: round;
+}
+
+
+
+
+#container {
+  position: absolute;
+  margin: auto;
+  height: 80pt;
+  top: 0;
+  left: 25%;
+  bottom: 0;
+  opacity: 80%;
+  filter: url(#threshold) blur(0.6px);
+}
+
+#text1,
+#text2 {
+  color: rgb(49, 67, 43);
+  position: absolute;
+  width: 50%;
+  display: inline-block;
+  font-family: "Raleway", sans-serif;
+  font-size: 25pt;
+
+  text-align: right;
+
+  user-select: none;
+}

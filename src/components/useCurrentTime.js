@@ -2,13 +2,11 @@ import { ref, onBeforeUnmount } from "vue";
 
 export const useCurrentTime = () => {
   const currentTime = ref({
-    minutes: new Date().getMinutes(),
-    seconds: parse(new Date().getSeconds())}
-    );
+    seconds: parse(new Date().getSeconds()),
+    hourPosition: parseHour(new Date().getHours())
+  });
   const updateCurrentTime = () => {
-    currentTime.value.seconds = parse(new Date().getSeconds());
-    currentTime.value.minutes = new Date().getMinutes();
-    // console.log(currentTime.value.seconds)
+    currentTime.value.hourPosition = parseHour(new Date().getHours())
   };
   const updateTimeInterval = setInterval(updateCurrentTime, 500);
   onBeforeUnmount(() => {
@@ -47,16 +45,31 @@ export const useCurrentTime = () => {
 };
 
 function parse(seconds){
-  let graphSeconds = 6
-  if(seconds < 49){
+  let graphSeconds = 6  
+  if(seconds < 47){
     graphSeconds *= seconds
-    graphSeconds += 72
-    return graphSeconds
+    graphSeconds += 84
   }else{
-    seconds -= 48
+    seconds -= 46
     graphSeconds *= seconds
-    return graphSeconds
   }
+  let endingDeg = graphSeconds + 360
+  return {startDeg: graphSeconds, endDeg: endingDeg }
+}
+
+function parseHour(hour){
+  if(hour === 0 || hour === 12) return 84
+  else if (hour === 1 || hour === 13) return 114
+  else if (hour === 2 || hour === 14) return 144
+  else if (hour === 3 || hour === 15) return 174
+  else if (hour === 4 || hour === 16) return 204
+  else if (hour === 5 || hour === 17) return 234
+  else if (hour === 6 || hour === 18) return 264
+  else if (hour === 7 || hour === 19) return 294
+  else if (hour === 8 || hour === 20) return 324
+  else if (hour === 9 || hour === 21) return 354
+  else if (hour === 10 || hour === 22) return 24
+  else if (hour === 11 || hour === 23) return 54
 }
 
 function flipString(aString) {

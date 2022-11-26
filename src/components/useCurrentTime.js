@@ -40,7 +40,49 @@ export const useCurrentTime = () => {
       21: '9PM',
       22: '10PM',
       23: '11PM',
-    }
+    },
+    minutesText: ((sec)=>{
+
+      let minText = '';
+      const numbers = {
+        0 : "o'clock",
+        1 : "one",
+        2 : "two",
+        3 : "three",
+        4 : "four",
+        5 : "five",
+        6 : "six",
+        7 : "seven",
+        8 : "eight",
+        9 : "nine",
+        10 : "ten",
+        11 : "eleven",
+        12 : "twelve",
+        13 : "thirteen",
+        14 : "fourteen",
+        15 : "fifteen",
+        16 : "sixteen",
+        17 : "seventeen",
+        18 : "eighteen",
+        19 : "ninteeen",
+        20 : "twenty",
+        30 : "thirty",
+        40 : "forty",
+        50 : "fifty"
+      }
+      if(sec < 20){
+        return numbers[sec]
+      }else if(sec === 20 || sec === 30 || sec === 40 || sec === 50){
+        return numbers[sec]
+      }else{
+        let first = sec.toString()[0]
+        let second = sec.toString()[1]
+        first += "0"
+        minText += numbers[first]
+        minText += numbers[second]
+        return minText
+      }
+    })
   };
 };
 

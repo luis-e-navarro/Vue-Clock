@@ -16,7 +16,7 @@ export default {
     }\
 }';
     const input = ref(null)
-    const minutes = ref('infinitywasteland_');
+    const minutes = ref(['infinitywasteland_','']);
     const hourInput = ref(null)
     const hour = ref(null)
     const flipTable = {
@@ -55,15 +55,16 @@ export default {
         '\r' : '\n' 
         }
     onMounted(()=>{
-        //code -------------------------------------------------------------------------------------------------------------
+        const { currentTime, hourLabel, minutesText } = useCurrentTime();
+        // animation code -------------------------------------------------------------------------------------------------------------
         const elts = {
             text1: document.getElementById("text1"),
             text2: document.getElementById("text2")
         };
 
-        const texts = [
-            "current",
-            "time"
+        let texts = [
+            minutes.value[0],
+            minutes.value[1]
         ];
 
         const morphTime = 1;
@@ -140,7 +141,6 @@ export default {
 
 
 //---------------------------------------------------------------------------------------------------
-        const { currentTime, hourLabel } = useCurrentTime();
         const mapObj = {
             STARTING_VALUE: `${currentTime.value.seconds.startDeg}deg`,
             ENDING_VALUE: `${currentTime.value.seconds.endDeg}deg`
@@ -153,11 +153,17 @@ export default {
             }))
         }
         setInterval(()=> {
+            texts = [
+            minutes.value[0],
+            minutes.value[1]
+        ];
             const currentDate = new Date()
             // input.value.style.transform = `rotate(${currentTime.value.seconds}deg) `;
             hourInput.value.style.transform = `rotate(${currentTime.value.hourPosition}deg)`
-            minutes.value = currentDate.getMinutes().toString();
-            hour.value = hourLabel[currentDate.getHours()];
+            minutes.value[0] = currentDate.getMinutes().toString();
+            minutes.value[1] = minutesText(currentDate.getMinutes())
+            hour.value = '✣'
+            // hour.value = hourLabel[currentDate.getHours()];
         },500)
     })
     return {input,minutes, hour, hourInput}
@@ -205,7 +211,7 @@ export default {
                 <use xlink:href="#circlePath" fill="none"/>
                 <text   id="textCircle">
     
-                    <textPath id="textPathId" xlink:href="#circlePath">{{minutes}}</textPath>
+                    <textPath id="textPathId" xlink:href="#circlePath">{{minutes[0]}}</textPath>
                
                 </text>
             </g>

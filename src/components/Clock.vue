@@ -16,9 +16,10 @@ export default {
     }\
 }';
     const input = ref(null)
+    const rotatingMinutes = ref('')
     const minutes = ref(['infinitywasteland_','']);
     const hourInput = ref(null)
-    const hour = ref(null)
+    const hour = ref('')
     const flipTable = {
         a : '\u0250',
         b : 'q',
@@ -61,7 +62,7 @@ export default {
             text1: document.getElementById("text1"),
             text2: document.getElementById("text2")
         };
-
+        rotatingMinutes.value = elts
         let texts = [
             minutes.value[0],
             minutes.value[1]
@@ -158,21 +159,15 @@ export default {
             minutes.value[1]
         ];
             const currentDate = new Date()
-            // input.value.style.transform = `rotate(${currentTime.value.seconds}deg) `;
             hourInput.value.style.transform = `rotate(${currentTime.value.hourPosition}deg)`
             minutes.value[0] = currentDate.getMinutes().toString();
             minutes.value[1] = minutesText(currentDate.getMinutes())
             hour.value = '✣'
-            // hour.value = hourLabel[currentDate.getHours()];
+            hour.value = hourLabel[currentDate.getHours()];
         },500)
     })
-    return {input,minutes, hour, hourInput}
+    return {input,minutes, hour, hourInput, rotatingMinutes}
   }
-//   mounted(){
-//     const { currentTime } = useCurrentTime();
-//     console.log(currentTime.value);
-//     this.$refs.input.style.transform = `rotate(${currentTime.value}deg)`
-//   }
 };
 </script>
 
@@ -207,12 +202,11 @@ export default {
                 <path  id="circlePath" d=" M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 "/>
             </defs>
             <circle cx="150" cy="100" r="75" fill="none"/>
-            <g id="gElement">
+            <g id="container">
                 <use xlink:href="#circlePath" fill="none"/>
-                <text   id="textCircle">
-    
-                    <textPath id="textPathId" xlink:href="#circlePath">{{minutes[0]}}</textPath>
-               
+                <text >
+                    <textPath id="text1" xlink:href="#circlePath"></textPath>
+                    <textPath id="text2" xlink:href="#circlePath"></textPath>
                 </text>
             </g>
             </svg>
@@ -225,15 +219,13 @@ export default {
                     <use xlink:href="#circlePath" fill="none"/>
                     <text   id="textCircle">
         
-                        <textPath id="textPathId" xlink:href="#circlePath">{{hour}}</textPath>
+                        <textPath id="textPathId" xlink:href="#circlePath">○</textPath>
                 
                     </text>
                 </g>
             </svg>
-            <div id="container">
-                <span id="text1"></span>
-                <span id="text2"></span>
-            </div>
+
+
 
             <svg id="filters">
                 <defs>

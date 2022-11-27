@@ -6,30 +6,14 @@ defineProps({
 })
 let flip = false;
 let timer;
-let count = ref(new Date().getSeconds())
-function updateTime(){
-  
-  if(!flip){
-    timer = setInterval(()=>{count.value = new Date().getSeconds()},200)
-    console.log('here')
-    flip = true
-    return 
-  }else{
-    clearInterval(timer)
-    flip = false
-  }
+let count = ref('Clock')
 
-}
 </script>
 
 <template>
-  <h1>{{ msg }}</h1>
-
   <div class="card">
     <button type="button" @click="updateTime"> {{ count }}</button>
   </div>
-
-
 </template>
 
 <style scoped>

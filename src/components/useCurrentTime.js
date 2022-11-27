@@ -16,7 +16,7 @@ export const useCurrentTime = () => {
   return {
     currentTime,
     hourLabel: {
-      0: '12AM',
+      0: '12',
       1: '1AM',
       2: '2AM',
       3: '3AM',

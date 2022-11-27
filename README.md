@@ -19,6 +19,13 @@ Vue clock!
 - Ability to see virtual clock
 - Vue technology
 
+## Demo
+
+**Gameplay**
+
+<p align="center">
+  <img src="src/assets/demo.gif" width="600px" margin="auto"/>
+</p>
 
 ## Running Vue Clock
 

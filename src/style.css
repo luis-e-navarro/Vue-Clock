@@ -101,7 +101,7 @@ button:focus-visible {
   right: 0px;
   bottom: 0px;
   left: 0px;
-  opacity: 50%;
+  opacity: 20%;
 }
 
 
@@ -121,46 +121,49 @@ button:focus-visible {
   overflow: hidden;
 }
 
-#textPathId{
-transform: rotate(180deg);
-}
 
-#textCircle{
-fill: rgb(49, 67, 43);
-opacity: 88%;
 
-}
+
 
 
 #circle { position: relative; width: 100% }
 
-#circle text { font-family: 'Rubik', sans-serif; font-size: 18px; font-weight: bold;  
+#circle text { font-size: 18px; font-weight: bold;  
 }
 
-#secondsMinutes{ position: absolute; left: -14rem; top: -217px; width: 189%; height: 940px;
-  /* -webkit-animation-name: rotate;
+#secondsMinutes{ position: absolute; left: -14rem; top: -187px; width: 189%; height: 877px;
+  -webkit-animation-name: rotate;
   -moz-animation-name: rotate;
    -ms-animation-name: rotate;
-    -o-animation-name: rotate; */
+    -o-animation-name: rotate;
        animation-name: rotate;
-/* -webkit-animation-duration: 60s;
+-webkit-animation-duration: 60s;
   -moz-animation-duration: 60s;
    -ms-animation-duration: 60s;
-    -o-animation-duration: 60s; */
+    -o-animation-duration: 60s;
        animation-duration: 60s;
-/* -webkit-animation-iteration-count: infinite;
+-webkit-animation-iteration-count: infinite;
   -moz-animation-iteration-count: infinite;
    -ms-animation-iteration-count: infinite;
-    -o-animation-iteration-count: infinite; */
+    -o-animation-iteration-count: infinite;
        animation-iteration-count: infinite;
-/* -webkit-animation-timing-function: linear;
+-webkit-animation-timing-function: linear;
   -moz-animation-timing-function: linear;
    -ms-animation-timing-function: linear;
-    -o-animation-timing-function: linear; */
+    -o-animation-timing-function: linear;
        animation-timing-function: linear;
 }
 
-#hoursDisplayed{ position: absolute; left: -6rem; top: -67px; width: 139%; height: 653px; }
+#hoursDisplayed{
+  position: absolute;
+  left: -6rem;
+  top: -60px;
+  width: 136%;
+  height: 631px;
+  font-family: "Raleway", sans-serif;
+  opacity: 75%;
+  filter:  blur(0.6px);
+}
   
 
 
@@ -212,11 +215,11 @@ opacity: 88%;
 }
 .snurra {
   filter: url(#gegga);
-  width: 148%;
-  height: 148%;
+  width: 149%;
+  height: 149%;
   opacity: 74%;
   position: absolute;
-  top: -19%;
+  top: -18%;
   left: -24%;
 }
 .strecken {
@@ -233,11 +236,11 @@ opacity: 88%;
 
 #container {
   position: absolute;
-  margin: auto;
-  height: 80pt;
-  top: 0;
+  /* margin: auto; */
+  /* height: 80pt; */
+  /* top: 0;
   left: 25%;
-  bottom: 0;
+  bottom: 0; */
   opacity: 80%;
   filter: url(#threshold) blur(0.6px);
 }
@@ -246,12 +249,12 @@ opacity: 88%;
 #text2 {
   color: rgb(49, 67, 43);
   position: absolute;
-  width: 50%;
+  /* width: 50%; */
   display: inline-block;
   font-family: "Raleway", sans-serif;
   font-size: 25pt;
 
-  text-align: right;
+  /* text-align: right; */
 
   user-select: none;
 }

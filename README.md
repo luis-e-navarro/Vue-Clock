@@ -29,12 +29,9 @@ Vue clock!
 
 ## Running Vue Clock
 
-1. Install dependencies with 
-             
-        npm install
                 
 
-2. Run the application
+1. Run the application
 
         npm run dev
 

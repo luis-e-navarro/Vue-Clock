@@ -24,7 +24,7 @@ Vue clock!
 **Gameplay**
 
 <p align="center">
-  <img src="src/assets/demo.gif" width="600px" margin="auto"/>
+  <img src="src/assets/clockgif.gif" width="600px" margin="auto"/>
 </p>
 
 ## Running Vue Clock
